@@ -1,6 +1,6 @@
 import string
 
-sentence = ' jenny eats cookies '
+sentence = input("Input: ")
 inputString = sentence.lower()+'#'
 
 alphabetList = list(string.ascii_lowercase)
