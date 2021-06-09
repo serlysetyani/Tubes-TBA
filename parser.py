@@ -1,48 +1,48 @@
-sentence = 'adik membaca buku'
+sentence = input("Input:")
 tokens = sentence.lower().split()
 tokens.append('EOS')
 
 nonTerminals = ['S', 'NN', 'VB']
-terminals = ['adik', 'kakak', 'bakso', 'tahu', 'buku',
-             'sepatu', 'topi', 'membaca', 'makan', 'memakai']
+terminals = ['mom', 'dad', 'jenny', 'books', 'cake',
+             'cola', 'cookies', 'drinks', 'eats', 'reads']
 
 parseTable = {}
 
-parseTable[('S', 'kakak')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'adik')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'bakso')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'tahu')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'buku')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'sepatu')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'topi')] = ['NN', 'VB', 'NN']
-parseTable[('S', 'membaca')] = ['error']
-parseTable[('S', 'makan')] = ['error']
-parseTable[('S', 'memakai')] = ['error']
+parseTable[('S', 'mom')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'dad')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'jenny')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'books')] = ['error']
+parseTable[('S', 'cake')] = ['error']
+parseTable[('S', 'cola')] = ['error']
+parseTable[('S', 'cookies')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'drinks')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'eats')] = ['NN', 'VB', 'NN']
+parseTable[('S', 'reads')] = ['NN', 'VB', 'NN']
 parseTable[('S', 'EOS')] = ['error']
 
-parseTable[('NN', 'kakak')] = ['kakak']
-parseTable[('NN', 'adik')] = ['adik']
-parseTable[('NN', 'bakso')] = ['bakso']
-parseTable[('NN', 'tahu')] = ['tahu']
-parseTable[('NN', 'buku')] = ['buku']
-parseTable[('NN', 'sepatu')] = ['sepatu']
-parseTable[('NN', 'topi')] = ['topi']
-parseTable[('NN', 'membaca')] = ['error']
-parseTable[('NN', 'makan')] = ['error']
-parseTable[('NN', 'memakai')] = ['error']
-parseTable[('NN', 'EOS')] = ['error']
-
-parseTable[('VB', 'kakak')] = ['error']
-parseTable[('VB', 'adik')] = ['error']
-parseTable[('VB', 'bakso')] = ['error']
-parseTable[('VB', 'tahu')] = ['error']
-parseTable[('VB', 'buku')] = ['error']
-parseTable[('VB', 'sepatu')] = ['error']
-parseTable[('VB', 'topi')] = ['error']
-parseTable[('VB', 'membaca')] = ['membaca']
-parseTable[('VB', 'makan')] = ['makan']
-parseTable[('VB', 'memakai')] = ['memakai']
+parseTable[('VB', 'mom')] = ['error']
+parseTable[('VB', 'dad')] = ['error']
+parseTable[('VB', 'jenny')] = ['error']
+parseTable[('VB', 'books')] = ['error']
+parseTable[('VB', 'cake')] = ['error']
+parseTable[('VB', 'cola')] = ['error']
+parseTable[('VB', 'cookies')] = ['error']
+parseTable[('VB', 'drinks')] = ['drinks']
+parseTable[('VB', 'eats')] = ['eats']
+parseTable[('VB', 'reads')] = ['reads']
 parseTable[('VB', 'EOS')] = ['error']
+
+parseTable[('NN', 'mom')] = ['mom']
+parseTable[('NN', 'dad')] = ['dad']
+parseTable[('NN', 'jenny')] = ['jenny']
+parseTable[('NN', 'books')] = ['books']
+parseTable[('NN', 'cake')] = ['cake']
+parseTable[('NN', 'cola')] = ['cola']
+parseTable[('NN', 'cookies')] = ['error']
+parseTable[('NN', 'drinks')] = ['error']
+parseTable[('NN', 'eats')] = ['error']
+parseTable[('NN', 'reads')] = ['error']
+parseTable[('NN', 'EOS')] = ['error']
 
 stack = []
 stack.append('#')
