@@ -1,6 +1,17 @@
+# Kelompok 2 IF-43-04
+# Serly Setyani (1301190225)
+# Rayhan Zanzabila (1301191072)
+# Alifya Aisyah Ariyanto (1301194257)
+
+# ⚠️⚠️⚠️
+# Ada sedikit bug pada program,
+# pada saat input pada kata terakhir berikan spasi di akhir kata agar
+# output current token kata terakhir terlihat.
+# Bug tidak mempengaruhi hasil valid/tidaknya.
+
 import string
 
-sentence = input("Input: ")
+sentence = input("Input:")
 inputString = sentence.lower()+'#'
 
 alphabetList = list(string.ascii_lowercase)
@@ -112,7 +123,7 @@ while state != 'accept':
     state = transitionTable[(state, currenChar)]
     if state == 'q28':
         print('Current token:', currenToken, ', valid')
-        currenToken = ' '
+        currenToken = ''
     if state == 'error':
         print('error')
         break
